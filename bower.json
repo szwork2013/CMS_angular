@@ -4,10 +4,9 @@
   "description": "SSITA Course Management System",
   "dependencies": {
     "angular": "latest",
-    "jquery": "~2.1.4",
-    "underscore": "~1.8.3",
+    "angular-route": "latest",
     "bootstrap": "~3.3.5",
-    "requirejs-text": "~2.0.14",
-    "requirejs": "~2.1.20"
+    "requirejs": "latest",
+    "requirejs-domready": "latest"
   }
 }

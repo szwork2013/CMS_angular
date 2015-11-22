@@ -1,8 +1,8 @@
 require.config({
     paths: {
-        angular: "vendor/bower/angular/angular",
-        ngRoute: "vendor/bower/angular-route/angular-route",
-        underscore: "vendor/bower/underscore/underscore"
+        angular: "../vendor/bower/angular/angular.min",
+        domReady: "../vendor/bower/requirejs-domready/domReady",
+        ngRoute: "../vendor/bower/angular-route/angular-route.min"
     },
     shim: {
         angular: {
@@ -10,14 +10,7 @@ require.config({
         },
         ngRoute: {
             deps: ["angular"]
-        },
-        underscore: {
-            exports: "_"
         }
     },
-    packages: ["starter"]
-});
-
-require(["angular", "app"], function (angular) {
-    angular.bootstrap(document.documentElement, ["app"]);
+    deps: ["bootstrap"]
 });
