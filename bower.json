@@ -7,6 +7,7 @@
     "angular-route": "latest",
     "bootstrap": "~3.3.5",
     "requirejs": "latest",
-    "requirejs-domready": "latest"
+    "requirejs-domready": "latest",
+    "requirejs-text": "~2.0.14"
   }
 }

@@ -2,19 +2,19 @@ define(function (require) {
     "use strict";
 
     var angular = require("angular"),
-        LoginModule = require("./modules/login"),
-        MainApp;
-        require("ngRoute");
+        LoginModule = require("./modules/login/main"),
+        MainApp,
+        ngRoute = require("ngRoute");
 
     MainApp = angular
-                .module("MainApp", [ngRoute, LoginModule])
+                .module("MainApp", ["ngRoute", "LoginModule"])
                 .config(function ($routeProvider) {
                     $routeProvider
                         .when("/" , {
-                            templateUrl: require("text!./login/templates/LoginTemplate.html"),
-                            controller: require("./login/controllers/LoginCtrl")
+                            template: require("text!./modules/login/templates/LoginTemplate.html"),
+                            controller: "LoginCtrl"
                         })
-                        .otherwise(redirectTo: "/");
+                        .otherwise({redirectTo: "/"});
                 });
 
     return MainApp;

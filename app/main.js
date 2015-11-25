@@ -2,7 +2,8 @@ require.config({
     paths: {
         angular: "../vendor/bower/angular/angular.min",
         domReady: "../vendor/bower/requirejs-domready/domReady",
-        ngRoute: "../vendor/bower/angular-route/angular-route.min"
+        ngRoute: "../vendor/bower/angular-route/angular-route.min",
+        text: "../vendor/bower/requirejs-text/text"
     },
     shim: {
         angular: {
