@@ -4,7 +4,7 @@ define(function (require) {
     var angular = require("angular"),
         LoginModule = angular.module("LoginModule", []);
 
-        LoginModule.controller("LoginCtrl", ["$scope", require("./controllers/LoginCtrl")]);
+        LoginModule.controller("LoginCtrl", require("./controllers/LoginCtrl"));
 
     return LoginModule;
 });

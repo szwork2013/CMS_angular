@@ -3,19 +3,42 @@ define(function (require) {
 
     var angular = require("angular"),
         LoginModule = require("./modules/login/main"),
-        MainApp,
-        ngRoute = require("ngRoute");
+        CoursesModule = require("./modules/courses/main"),
+        CourseDetailModule = require("./modules/course_details/main"),
+        CourseModule = require("./modules/course_module/main"),
+        MainApp;
+        require("ngRoute");
 
-    MainApp = angular
-                .module("MainApp", ["ngRoute", "LoginModule"])
-                .config(function ($routeProvider) {
-                    $routeProvider
-                        .when("/" , {
-                            template: require("text!./modules/login/templates/LoginTemplate.html"),
-                            controller: "LoginCtrl"
-                        })
-                        .otherwise({redirectTo: "/"});
-                });
+    MainApp = angular.module("MainApp", [
+        "ngRoute", 
+        "LoginModule", 
+        "CoursesModule",
+        "CourseDetailModule",
+        "CourseModule"
+    ]);
+
+    MainApp.config(function ($routeProvider) {
+        $routeProvider
+            .when("/login" , {
+                template: require("text!./modules/login/templates/LoginTemplate.html"),
+                controller: "LoginCtrl"
+            })
+            .when("/courses", {
+                template: require("text!./modules/courses/templates/CoursesTemplate.html"),
+                controller: "CoursesCtrl"
+            })
+            .when("/courses/:courseId", {
+                template: require("text!./modules/course_details/templates/CourseDetailTemplate.html"),
+                controller: "CourseDetailCtrl"
+            })
+            .when("/courses/:courseId/modules/:moduleId", {
+                template: require("text!./modules/course_module/templates/CourseModuleTemplate.html"),
+                controller: "CourseModuleCtrl"
+            })
+            .otherwise({
+                redirectTo: "/courses"
+            });
+    });
 
     return MainApp;
 });

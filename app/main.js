@@ -3,7 +3,10 @@ require.config({
         angular: "../vendor/bower/angular/angular.min",
         domReady: "../vendor/bower/requirejs-domready/domReady",
         ngRoute: "../vendor/bower/angular-route/angular-route.min",
-        text: "../vendor/bower/requirejs-text/text"
+        ngMessages: "../vendor/bower/angular-messages/angular-messages.min",
+        text: "../vendor/bower/requirejs-text/text",
+        bootstrap: "../vendor/bower/bootstrap/dist/js/bootstrap.min",
+        jQuery: "../vendor/bower/jquery/dist/jquery.min"
     },
     shim: {
         angular: {
@@ -11,7 +14,13 @@ require.config({
         },
         ngRoute: {
             deps: ["angular"]
+        },
+        ngMessages: {
+            deps: ["angular"]
+        },
+        bootstrap: {
+            deps: ["jQuery"]
         }
     },
-    deps: ["bootstrap"]
+    deps: ["bootstraping"]
 });
