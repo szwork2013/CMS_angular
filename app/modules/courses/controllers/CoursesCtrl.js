@@ -1,13 +1,11 @@
 define(function (require) {
   "use strict";
 
-  function CoursesCtrl ($scope, $http) {
-    $http.get("../courses/courses.json").success(function (data) {
-      $scope.courses = data;
-    });
+  function CoursesCtrl ($scope, Course) {
+      $scope.courses = Course.query();
   };
 
-  CoursesCtrl.$inject = ["$scope", "$http"];
+  CoursesCtrl.$inject = ["$scope", "Course"];
 
   return CoursesCtrl;
 });

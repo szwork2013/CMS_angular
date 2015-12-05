@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+  var connect = require("connect"),
+      serveStatic = require("serve-static");
+
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
 
@@ -29,10 +32,17 @@ module.exports = function(grunt) {
     },
 
     connect: {
-      server: {
+      dev: {
         options: {
-          port: 9001,
-          base: "app"
+          livereload: true,
+          port: 8034,
+          middleware: function(connect) {
+            return [
+              serveStatic('.tmp'),
+              connect().use('/vendor/bower', serveStatic('./vendor/bower')),
+              serveStatic('app', 'courses')
+            ]
+          }
         }
       }
     }
@@ -43,6 +53,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-connect");
 
-  grunt.registerTask("server", ["connect:server", "watch"]);
+  grunt.registerTask("server", ["connect", "watch:dev"]);
 
 }

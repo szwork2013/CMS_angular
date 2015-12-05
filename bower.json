@@ -6,6 +6,7 @@
     "angular": "latest",
     "angular-route": "latest",
     "angular-messages": "latest",
+    "angular-resource": "latest",
     "bootstrap": "~3.3.5",
     "requirejs": "latest",
     "requirejs-domready": "latest",

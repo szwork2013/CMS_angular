@@ -1,17 +1,12 @@
 define(function (require) {
   "use strict";
 
-  function CourseModuleCtrl($scope, $http, $routeParams) {
-    $http.get("../courses/" + $routeParams.moduleId + ".json").success(function (data) {
-      $scope.module = data;
-    });
-
-    $http.get("../courses/" + $routeParams.courseId + ".json").success(function (data) {
-      $scope.course = data;
-    });
+  function CourseModuleCtrl($scope, $routeParams, Module, Course) {
+    $scope.module = Module.get({moduleId: $routeParams.moduleId});
+    $scope.course = Course.get({courseId: $routeParams.courseId});
   };
 
-  CourseModuleCtrl.$inject = ["$scope", "$http", "$routeParams"];
+  CourseModuleCtrl.$inject = ["$scope", "$routeParams", "Module", "Course"];
 
   return CourseModuleCtrl;
 });

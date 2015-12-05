@@ -6,15 +6,23 @@ define(function (require) {
         CoursesModule = require("./modules/courses/main"),
         CourseDetailModule = require("./modules/course_details/main"),
         CourseModule = require("./modules/course_module/main"),
+
+        CourseService = require("./modules/helpers/services/CourseService"),
+        ModuleService = require("./modules/helpers/services/ModuleService"),
         MainApp;
+
         require("ngRoute");
 
     MainApp = angular.module("MainApp", [
-        "ngRoute", 
+        "ngRoute",
+
         "LoginModule", 
         "CoursesModule",
         "CourseDetailModule",
-        "CourseModule"
+        "CourseModule",
+
+        "CourseService",
+        "ModuleService"
     ]);
 
     MainApp.config(function ($routeProvider) {
@@ -35,9 +43,9 @@ define(function (require) {
                 template: require("text!./modules/course_module/templates/CourseModuleTemplate.html"),
                 controller: "CourseModuleCtrl"
             })
-            .otherwise({
-                redirectTo: "/courses"
-            });
+            // .otherwise({
+            //     redirectTo: "/courses"
+            // });
     });
 
     return MainApp;
