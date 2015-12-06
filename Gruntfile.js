@@ -40,7 +40,8 @@ module.exports = function(grunt) {
             return [
               serveStatic('.tmp'),
               connect().use('/vendor/bower', serveStatic('./vendor/bower')),
-              serveStatic('app', 'courses')
+              connect().use('/courses/', serveStatic('./courses/')),
+              serveStatic('app')
             ]
           }
         }
@@ -53,6 +54,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-connect");
 
-  grunt.registerTask("server", ["connect", "watch:dev"]);
+  grunt.registerTask("server", ["connect:dev", "watch"]);
 
 }

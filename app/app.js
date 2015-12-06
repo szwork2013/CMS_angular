@@ -43,9 +43,9 @@ define(function (require) {
                 template: require("text!./modules/course_module/templates/CourseModuleTemplate.html"),
                 controller: "CourseModuleCtrl"
             })
-            // .otherwise({
-            //     redirectTo: "/courses"
-            // });
+            .otherwise({
+                redirectTo: "/courses"
+            });
     });
 
     return MainApp;

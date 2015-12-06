@@ -1,4 +1,11 @@
 {
+  "license": "ISC",
+  "name": "cms",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmehera123/cms_angular.git"
+  },
   "devDependencies": {
     "connect" : "~3.4.0",
     "grunt": "^0.4.5",
