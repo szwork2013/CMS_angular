@@ -2,9 +2,9 @@ define(function (require) {
     "use strict";
 
     function LoginCtrl($scope, $location, $window, UserService, AuthenticationService) {
-        $scope.login = function LogIn(email, password) {
+        $scope.logIn = function logIn(email, password) {
             if (email !== undefined && password !== undefined) {
-                UserService.LogIn(email, password)
+                UserService.logIn(email, password)
                     .success(function (data) {
                         AuthenticationService.isLogged = true;
                         $window.sessionStorage.token = data.token;
@@ -16,7 +16,7 @@ define(function (require) {
             };
         }
 
-        $scope.logout = function LogOut() {
+        $scope.logOut = function logOut() {
             if (AuthenticationService.isLogged) {
                 AuthenticationService.isLogged = false;
                 delete $window.sessionStorage.token;

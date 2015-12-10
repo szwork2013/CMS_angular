@@ -7,8 +7,6 @@ define(function (require) {
         CourseDetailModule = require("./modules/course_details/main"),
         CourseModule = require("./modules/course_module/main"),
 
-        CourseService = require("./modules/helpers/services/CourseService"),
-        ModuleService = require("./modules/helpers/services/ModuleService"),
         MainApp;
 
         require("ngRoute");
@@ -19,10 +17,7 @@ define(function (require) {
         "LoginModule", 
         "CoursesModule",
         "CourseDetailModule",
-        "CourseModule",
-
-        "CourseService",
-        "ModuleService"
+        "CourseModule"
     ]);
 
     MainApp.config(function ($routeProvider) {

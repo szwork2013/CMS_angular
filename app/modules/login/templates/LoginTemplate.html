@@ -29,7 +29,7 @@
           <a class="btn btn-md btn-info pull-right" href="#register" role="button" id="registerButton">Реєстрація</a>
         </div>
         <div class="form-group text-center">
-          <button type="submit" class="btn btn-md btn-success" id="submitLogin" ng-disabled="loginForm.$invalid">Вхід</button>
+          <button type="submit" class="btn btn-md btn-success" id="submitLogin" ng-disabled="loginForm.$invalid" ng-click="logIn(email, password)">Вхід</button>
         </div>
       </form>
     </div>

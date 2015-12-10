@@ -2,7 +2,9 @@ define(function (require) {
   "use strict";
 
   var angular = require("angular"),
-      CourseDetailModule = angular.module("CourseDetailModule", []);
+      ModuleService = require("./services/ModuleService"),
+      CourseDetailModule = angular.module("CourseDetailModule", ["ModuleService"]);
+
 
   CourseDetailModule.controller("CourseDetailCtrl", require("./controllers/CourseDetailCtrl"));
 

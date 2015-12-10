@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 
     watch: {
       dev: {
-        files: ["app/*", "!app/img/*", "!app/styles/*"],
+        files: ["app/*"],
         options: {
           livereload: true
         },
@@ -38,10 +38,10 @@ module.exports = function(grunt) {
           port: 8034,
           middleware: function(connect) {
             return [
-              serveStatic('.tmp'),
-              connect().use('/vendor/bower', serveStatic('./vendor/bower')),
-              connect().use('/courses/', serveStatic('./courses/')),
-              serveStatic('app')
+              connect().use("/vendor/bower", serveStatic("./vendor/bower")),
+              connect().use("/courses/", serveStatic("./courses/")),
+              connect().use("/app/img/", serveStatic("./app/img/")),
+              serveStatic("app")
             ]
           }
         }
