@@ -3,7 +3,7 @@ define(function (require) {
 
   function CoursesCtrl ($scope, Course) {
       $scope.courses = Course.query();
-  };
+  }
 
   CoursesCtrl.$inject = ["$scope", "Course"];
 

@@ -13,8 +13,8 @@ define(function (require) {
                     .error(function (status, data) {
                         console.log("Status: " + status + "Data: " + data);
                     });
-            };
-        }
+            }
+        };
 
         $scope.logOut = function logOut() {
             if (AuthenticationService.isLogged) {
@@ -22,8 +22,8 @@ define(function (require) {
                 delete $window.sessionStorage.token;
                 $location.path("/login");
             }
-        }
-    };
+        };
+    }
 
     LoginCtrl.$inject = ["$scope", "$location", "$window", "UserService", "AuthenticationService"];
 

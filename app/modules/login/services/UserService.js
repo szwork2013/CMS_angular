@@ -12,7 +12,7 @@ define(function (require) {
       logOut: function () {
 
       }
-    }
+    };
   });
 
   return UserService;
