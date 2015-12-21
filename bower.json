@@ -4,8 +4,7 @@
   "description": "SSITA Course Management System",
   "dependencies": {
     "angular": "latest",
-    "angular-route": "latest",
-    "angular-messages": "latest",
+    "angular-ui-router": "latest",
     "angular-resource": "latest",
     "bootstrap": "~3.3.5",
     "requirejs": "latest",

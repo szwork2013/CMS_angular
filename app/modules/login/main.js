@@ -1,12 +1,21 @@
 define(function (require) {
-    "use strict";
+  "use strict";
 
-    var angular = require("angular"),
-        AuthenticationService = require("./services/AuthenticationService"),
-        UserService = require("./services/UserService"),
-        LoginModule = angular.module("LoginModule", ["AuthenticationService", "UserService"]);
+  var angular = require("angular"),
 
-    LoginModule.controller("LoginCtrl", require("./controllers/LoginCtrl"));
+  LoginModule = angular
+    .module("LoginModule", [])
 
-    return LoginModule;
+    .controller("LoginCtrl", require("./controllers/LoginCtrl"))
+
+    .service("auth", require("./services/AuthService"))
+    .service("session", require("./services/SessionService"))
+
+    .factory("Interceptor", require("./services/TokenInterceptor"))
+
+    .run(require("./services/assignToRootScope"))
+
+    .config(require("./config"));
+
+  return LoginModule;
 });

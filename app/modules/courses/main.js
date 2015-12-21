@@ -2,10 +2,14 @@ define(function (require) {
   "use strict";
 
   var angular = require("angular"),
-      CourseService = require("./services/CourseService"),
-      CoursesModule = angular.module("CoursesModule", ["CourseService"]);
+      ngResource = require("ngResource"),
 
-  CoursesModule.controller("CoursesCtrl", require("./controllers/CoursesCtrl"));
+  CoursesModule = angular
+    .module("CoursesModule", ["ngResource"]);
+
+    .controller("CoursesCtrl", require("./controllers/CoursesCtrl"))
+
+    .factory("Course", require("./services/CourseService"));
 
   return CoursesModule;
 });

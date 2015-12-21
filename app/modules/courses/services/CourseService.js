@@ -1,18 +1,13 @@
 define(function (require) {
   "use strict";
 
-  var angular = require("angular"),
-      CourseService;
-  require("ngResource");
+  function Course($resource) {
+    return $resource("../courses/:courseId.json", {}, {
+      query: {method: "GET", params: {courseId: "courses"}, isArray: true}
+    });
+  }
 
-  CourseService = angular.module("CourseService", ["ngResource"]);
+  Course.$inject = ["$resource"];
 
-  CourseService.factory("Course", ["$resource",
-    function ($resource) {
-      return $resource("../courses/:courseId.json", {}, {
-        query: {method: "GET", params: {courseId: "courses"}, isArray: true}
-      });
-    }]);
-
-  return CourseService;
+  return Course;
 });
