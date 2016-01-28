@@ -3,9 +3,12 @@
   "homepage": "https://github.com/vmehera123/cms_angular",
   "description": "SSITA Course Management System",
   "dependencies": {
+    "almond": "~0.3.1",
     "angular": "latest",
-    "angular-ui-router": "latest",
+    "angular-animate": "latest",
+    "angular-bootstrap": "latest",
     "angular-resource": "latest",
+    "angular-ui-router": "latest",
     "bootstrap": "~3.3.5",
     "requirejs": "latest",
     "requirejs-domready": "latest",

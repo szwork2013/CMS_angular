@@ -1,7 +1,7 @@
-define(["require", "angular", "app"], function (require, ng) {
-    "use strict";
+define(["require", "angular", "app.module"], function (require, angular) {
+  "use strict";
 
-    require(["domReady!"], function (document) {
-        ng.bootstrap(document, ["MainApp"]);
-    });
+  require(["domReady!"], function (document) {
+    angular.bootstrap(document, ["app"]);
+  });
 });

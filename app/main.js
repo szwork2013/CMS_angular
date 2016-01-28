@@ -1,25 +1,27 @@
 require.config({
   paths: {
-    angular: "../bower/angular/angular.min",
-    domReady: "../bower/requirejs-domready/domReady",
-    uiRouter: "../bower/angular-ui-router/release/angular-ui-router.min",
-    ngResource: "../bower/angular-resource/angular-resource.min",
-    text: "../vendor/bower/requirejs-text/text",
+    angular: "../vendor/bower/angular/angular.min",
     bootstrap: "../vendor/bower/bootstrap/dist/js/bootstrap.min",
-    jQuery: "../vendor/bower/jquery/dist/jquery.min"
-    },
+    domReady: "../vendor/bower/requirejs-domready/domReady",
+    jQuery: "../vendor/bower/jquery/dist/jquery.min",
+    ngAnimate: "../vendor/bower/angular-animate/angular-animate.min",
+    ngResource: "../vendor/bower/angular-resource/angular-resource.min",
+    text: "../vendor/bower/requirejs-text/text",
+    uiBootstrap: "../vendor/bower/angular-bootstrap/ui-bootstrap-tpls.min",
+    uiRouter: "../vendor/bower/angular-ui-router/release/angular-ui-router.min"
+  },
   shim: {
     angular: {
       exports: "angular"
     },
-    ngRoute: {
+    ngResource: {
       deps: ["angular"]
     },
-    ngMessages: {
+    uiBootstrap: {
       deps: ["angular"]
     },
-    bootstrap: {
-      deps: ["jQuery"]
+    uiRouter: {
+      deps: ["angular"]
     }
   },
   deps: ["bootstraping"]
