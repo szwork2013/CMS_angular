@@ -7,7 +7,8 @@ define(function (require) {
       appCourses = require("./modules/courses.module/courses.module"),
       appLogin = require("./modules/login.module/login.module"),
       appModules = require("./modules/modules.module/modules.module"),
-      appReset = require("./modules/reset.module/reset.module");
+      appReset = require("./modules/reset.module/reset.module"),
+      appTests = require("./modules/tests.module/tests.module");
 
   angular
     .module("app", [
@@ -17,7 +18,8 @@ define(function (require) {
       "app.courses",
       "app.login",
       "app.modules",
-      "app.reset"
+      "app.reset",
+      "app.tests"
     ]);
 
   return angular;

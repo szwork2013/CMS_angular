@@ -55,13 +55,13 @@
   <div class="col-md-12">
     <div id="module-container" class="row course module">
       <div class="col-md-4 col-sm-5 text-center">
-        <a class="module-img save-anchor" ui-sref="modules({modulesId: $index + 1})">
+        <a class="module-img save-anchor" ui-sref="modules({modulesId: module._id})">
           <img ng-src="{{course.item.image}}"></a>
           </div>
           <div class="col-md-8 col-sm-7">
               <div class="module-title clearfix">
                 <strong>
-                  <a class="module-item-name save-anchor" ui-sref="modules({modulesId: $index + 1})">{{module.name}}</a>
+                  <a class="module-item-name save-anchor" ui-sref="modules({modulesId: module._id})">{{module.name}}</a>
                 </strong>
               </div>
               <div class="bottom-line clearfix">

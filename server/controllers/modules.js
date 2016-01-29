@@ -40,10 +40,8 @@ router.delete('/:moduleId', function(req, res) {
 module.exports = router;
 
 function getModuleByIdHandler(req, res, next) {
-  console.log(req.params);
   Module
-    .findOne({"_course": req.params.courseId, "_id": req.params.moduleId})
-    .populate("_course", "_id")
+    .findById(req.params.moduleId)
     .populate("_resources")
     .exec(function(err, module) {
       if (err) next(err);
