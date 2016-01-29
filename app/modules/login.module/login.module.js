@@ -7,18 +7,13 @@ define(function (require) {
   angular
     .module("app.login", [
       "app.core"
-    ]);
+    ])
+    .config(require("./login.routes"))
 
-    // .controller("login.ctrl", require("./controllers/login.controller"))
+    .controller("login.ctrl", require("./controllers/login.controller"))
 
-    // .service("auth", require("./services/AuthService"))
-    // .service("session", require("./services/SessionService"))
-
-    // .factory("Interceptor", require("./services/TokenInterceptor"))
-
-    // .run(require("./services/assignToRootScope"))
-
-    // .config(require("./config"));
+    .service("auth", require("./services/auth.service"))
+    .service("session", require("./services/session.service"));
 
   return angular;
 });

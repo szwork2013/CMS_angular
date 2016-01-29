@@ -1,28 +1,37 @@
 define(function (require) {
   "use strict";
 
+  Session.$inject = ["$window", "$location"];
+
   function Session($window, $location) {
-    this.getUser = function () {
+    this.getUser = getUser;
+    this.setUser = setUser;
+    this.getToken = getToken;
+    this.setToken = setToken;
+    this.destroy = destroy;
+
+    function getUser() {
       return JSON.parse($window.localStorage.getItem("user"));
-    };
-    this.setUser = function (user) {
+    }
+
+    function setUser(user) {
       $window.localStorage.user = JSON.stringify(user);
-      return this;
-    };
-    this.getToken = function () {
+    }
+
+    function getToken() {
       return $window.localStorage.getItem("token");
-    };
-    this.setToken = function (token) {
+    }
+
+    function setToken(token) {
       $window.localStorage.setItem("token", token);
-    };
-    this.destroy = function () {
+    }
+
+    function destroy() {
       $window.localStorage.removeItem("user");
       $window.localStorage.removeItem("token");
       $location.path("/login");
-    };
+    }
   }
-
-  Session.$inject = ["$window", "$location"];
 
   return Session;
 });

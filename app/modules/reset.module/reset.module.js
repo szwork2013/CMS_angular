@@ -8,8 +8,11 @@ define(function (require) {
     .module("app.reset", [
       "app.core"
     ])
+    .config(require("./reset.routes"))
 
-    .controller("reset.ctrl", require("./controllers/reset.controller"));
+    .controller("reset.ctrl", require("./controllers/reset.controller"))
+
+    .service("reset", require("./services/resetpass.service"));
 
   return angular;
 });

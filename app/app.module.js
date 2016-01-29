@@ -7,6 +7,7 @@ define(function (require) {
       appCourses = require("./modules/courses.module/courses.module"),
       appLogin = require("./modules/login.module/login.module"),
       appModules = require("./modules/modules.module/modules.module"),
+      appRegister = require("./modules/register.module/register.module"),
       appReset = require("./modules/reset.module/reset.module"),
       appTests = require("./modules/tests.module/tests.module");
 
@@ -18,6 +19,7 @@ define(function (require) {
       "app.courses",
       "app.login",
       "app.modules",
+      "app.register",
       "app.reset",
       "app.tests"
     ]);

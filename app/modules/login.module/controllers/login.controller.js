@@ -1,10 +1,15 @@
 define(function (require) {
   "use strict";
 
-  LoginCtrl.$inject = [];
+  LoginCtrl.$inject = ["auth"];
 
-  function LoginCtrl() {
+  function LoginCtrl(auth) {
     var vm = this;
+    vm.logIn = authHandler;
+
+    function authHandler(credentials) {
+      return auth.logIn(credentials);
+    }
   }
 
   return LoginCtrl;
